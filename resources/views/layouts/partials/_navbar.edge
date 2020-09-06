@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+      <ul class="navbar-nav mb-2 mb-lg-0 mr-auto">
+        @if(auth.isLoggedIn)
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="1-navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              Nav Item
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="1-navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+          @endif
+        </ul>
+        
+  
+        <ul class="navbar-nav mb-2 mb-lg-0">
+
+          @if(auth.isLoggedIn)
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-user"></i> {{auth.user.name}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="authDropdown">
+                <li class="nav-item">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="document.querySelector('#formLogout').submit()">Logout</a>
+                </li>
+
+              <form class="form" method="post" action="/logout" id="formLogout">{{csrfField()}}</form>
+            </ul>
+          </li>
+          @else
+          <a class="nav-link btn btn-outline-info px-5" href="#">Login</a>
+
+          @endif
+        </ul>
+       
+  
+      </div>
+    </div>
+  </nav>
+  

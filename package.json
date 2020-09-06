@@ -1,0 +1,51 @@
+{
+  "name": "adonis5-mastery",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node ace build",
+    "start": "node ace serve --watch",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^2.1.5",
+    "adonis-preset-ts": "^1.0.4",
+    "axios": "^0.20.0",
+    "bootstrap": "^5.0.0-alpha1",
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^5.0.5",
+    "lodash": "^4.17.20",
+    "pino-pretty": "^4.2.0",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^8.0.2",
+    "typescript": "^4.0.2",
+    "vue-template-compiler": "^2.6.12",
+    "youch": "^2.0.10",
+    "youch-terminal": "^1.0.0"
+  },
+  "dependencies": {
+    "@adonisjs/ace": "^6.9.4",
+    "@adonisjs/auth": "^4.3.1",
+    "@adonisjs/core": "^5.0.0-preview-rc-1.12",
+    "@adonisjs/fold": "^6.4.0",
+    "@adonisjs/lucid": "^8.4.2",
+    "@adonisjs/session": "^3.1.2",
+    "@adonisjs/shield": "^3.0.7",
+    "@adonisjs/view": "^2.0.8",
+    "luxon": "^1.25.0",
+    "mssql": "^6.2.1",
+    "mysql": "^2.18.1",
+    "phc-argon2": "^1.0.10",
+    "proxy-addr": "^2.0.6",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.19"
+  }
+}

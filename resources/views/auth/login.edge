@@ -1,0 +1,73 @@
+@layout('layouts/app') 
+@section('title') 
+Login
+@endsection
+@section('content')
+<div class="container pt-5">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <section class="card mt-5">
+        <form action="/login" method="post">
+            {{ csrfField() }}
+
+          <header class="card-header font-weight-bold">
+            Login
+          </header>
+
+          <main class="card-body">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="text"
+            class="form-control ltr {{flashMessages.has('errors.email') ? 'is-invalid': ''}}"
+                id="email"
+                name="email"
+                autocomplete="email"
+                autofocus
+              />
+
+            @if(flashMessages.has('errors.email'))
+              <span class="invalid-feedback" role="alert">
+                <strong>{{flashMessages.get('errors.email')}}</strong>
+              </span>
+            @endif
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input
+                type="password"
+                class="form-control ltr {{flashMessages.has('errors.password') ? 'is-invalid': ''}}"
+                id="password"
+                name="password"
+              />
+              
+              @if(flashMessages.has('errors.password'))
+              <span class="invalid-feedback" role="alert">
+                <strong>{{flashMessages.get('errors.password')}}</strong>
+              </span>
+              @endif
+            </div>
+
+            <div class="form-check form-switch">
+              <input class="form-check-input" style="border-radius: 2em;" type="checkbox" id="remember" name="remember">
+              <label class="form-check-label" for="remember" >Remember Me</label>
+            </div>
+          </main>
+
+          <footer class="card-footer">
+            <button type="submit" class="btn btn-outline-primary">
+              Login
+            </button>
+            <button type="reset" class="btn btn-outline-warning">
+              Cancel
+
+            </button>
+
+          </footer>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+@endsection

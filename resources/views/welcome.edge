@@ -1,0 +1,19 @@
+@layout('layouts/app')
+
+@section('content')
+    <div class="container">
+       <div class="row mt-5">
+           <div class="col-md-6 offset-md-3 align-self-center">
+               <div class="card">
+                   <div class="card-header">
+                       Welcome
+                   </div>
+
+                   <div class="card-body">
+                       You are logged in as {{auth.user.name}}
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+@endsection
